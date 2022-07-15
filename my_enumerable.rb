@@ -33,6 +33,22 @@ module MyEnumerable
     end
     false
   end
+
+  def filter(params = nil)
+    result = []
+    each do |item|
+      if params.is_a?(Class)
+        result << item if item.is_a?(params)
+      elsif params.is_a?(Regexp)
+        result << item if params.match(item)
+      elsif block_given?
+        result << item if yield item
+      elsif item == params
+        result << item
+      end
+    end
+    result
+  end
   
 end
 # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexit
