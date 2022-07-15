@@ -1,9 +1,5 @@
 # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 module MyEnumerable
-  def each(&block)
-    @list.each(&block)
-  end
-
   def all?(params = nil)
     each do |item|
       if block_given?
