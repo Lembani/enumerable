@@ -45,6 +45,5 @@ module MyEnumerable
     end
     result
   end
-  
 end
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexit
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
